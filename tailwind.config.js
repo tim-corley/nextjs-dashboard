@@ -1,15 +1,16 @@
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+  darkMode: 'class',
   purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'media', // 'media' or 'class'
   theme: {
     extend: {
       colors: {
-        'accent-1': '#333',
+        'accent-1': '#32a852',
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+  variants: {},
+};

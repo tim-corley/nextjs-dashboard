@@ -8,12 +8,12 @@
 
 html,
 body {
-  @apply bg-gray-50 dark:bg-gray-900;
+  @apply bg-gray-200 dark:bg-indigo-900 h-screen;
 }
 
 /* Write your own custom component styles here */
-.btn-blue {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+.nav-btn {
+  @apply px-4 py-2 font-bold text-gray-200 bg-indigo-900 rounded dark:bg-green-200 dark:text-black;
 }
 
 /* Start purging... */
@@ -21,3 +21,14 @@ body {
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+.toggle__dot {
+  top: -0.25rem;
+  left: -0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input:checked ~ .toggle__dot {
+  transform: translateX(100%);
+  background-color: #48bb78;
+}

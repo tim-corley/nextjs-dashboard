@@ -11,7 +11,7 @@ export default function Nav() {
       <ul className='flex items-center justify-between p-8'>
         <li>
           <Link href='/'>
-            <a className='text-blue-500 no-underline text-accent-1 dark:text-blue-300'>
+            <a className='no-underline text-indigo-900 dark:text-gray-200'>
               Home
             </a>
           </Link>
@@ -19,7 +19,7 @@ export default function Nav() {
         <ul className='flex items-center justify-between space-x-4'>
           {links.map(({ href, label }) => (
             <li key={`${href}${label}`}>
-              <a href={href} className='no-underline btn-blue'>
+              <a href={href} className='no-underline nav-btn'>
                 {label}
               </a>
             </li>
