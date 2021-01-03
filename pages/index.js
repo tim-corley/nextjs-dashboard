@@ -11,7 +11,6 @@ export default function Home() {
     setIsMounted(true);
   }, []);
   const switchTheme = () => {
-    console.log('toggled...');
     if (isMounted) {
       setTheme(theme === 'light' ? 'dark' : 'light');
     }
@@ -30,7 +29,7 @@ export default function Home() {
         Dark mode with Tailwind and Next-themes
       </h1>
       <button onClick={switchTheme}>Change theme</button>
-      <Toggle switchTheme={switchTheme} />
+      <Toggle switchTheme={switchTheme} theme={theme} />
     </div>
   );
 }
