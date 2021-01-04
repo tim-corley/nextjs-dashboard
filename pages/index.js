@@ -15,6 +15,11 @@ const Index = () => (
         <a className='uppercase inline-block nav-btn'>Learn More</a>
       </Link>
     </div>
+    <div className='mt-12 text-center'>
+      <Link href='/dashboard'>
+        <a className='uppercase inline-block nav-btn'>View Dashboard</a>
+      </Link>
+    </div>
   </div>
 );
 
