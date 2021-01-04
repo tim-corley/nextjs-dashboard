@@ -1,11 +1,11 @@
 import Dash from '../components/dash';
-import YoutubeSubs from '../components/YoutubeSubs';
+import YoutubeLists from '../components/YoutubeLists';
 
 const Dashboard = () => {
   return (
     <div>
       <Dash />
-      <YoutubeSubs />
+      <YoutubeLists />
       <Dash />
     </div>
   );
