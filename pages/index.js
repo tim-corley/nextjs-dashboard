@@ -1,35 +1,21 @@
-import { useState, useEffect } from 'react';
-import Head from 'next/head';
-import Nav from '../components/nav';
-import Toggle from '../components/toggle';
-import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
-export default function Home() {
-  const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-  const switchTheme = () => {
-    if (isMounted) {
-      setTheme(theme === 'light' ? 'dark' : 'light');
-    }
-  };
-  return (
-    <div className='text-center'>
-      <Head>
-        <title>Dash Demo</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <Nav />
-      <h1 className='text-5xl text-gray-800 dark:text-gray-100'>
+const Index = () => (
+  <div className='mt-8 max-w-xl mx-auto px-8'>
+    <h1 className='text-center'>
+      <span className='block text-xl text-gray-500 dark:text-green-200 leading-tight'>
+        Welcome!
+      </span>
+      <span className='block text-5xl text-gray-900 dark:text-green-200 font-bold leading-none'>
         My Dashboard
-      </h1>
-      <h1 className='text-2xl font-bold text-gray-800 dark:text-gray-100'>
-        Dark mode with Tailwind and Next-themes
-      </h1>
-      <button onClick={switchTheme}>Change theme</button>
-      <Toggle switchTheme={switchTheme} theme={theme} />
+      </span>
+    </h1>
+    <div className='mt-12 text-center'>
+      <Link href='/about'>
+        <a className='uppercase inline-block nav-btn'>Learn More</a>
+      </Link>
     </div>
-  );
-}
+  </div>
+);
+
+export default Index;
