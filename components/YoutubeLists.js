@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import Fetcher from '../lib/fetcher';
 import YoutubeCard from './YoutubeCard';
 
-const YoutubeSubs = () => {
+const YoutubeLists = () => {
   const { data, error } = useSWR('/api/youtube', Fetcher);
   if (error) {
     console.log(error);
@@ -11,17 +11,18 @@ const YoutubeSubs = () => {
   if (!data) {
     return <div>- - -</div>;
   }
-  console.log('YT DATA: ', data);
-  console.log('PL DATA: ', data[0]);
   const playlists = data[0].items;
   const thumbnail = data[1].items[0].snippet.thumbnails.high.url;
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-      {playlists.map((plist) => (
-        <YoutubeCard data={plist.snippet} thumbnail={thumbnail} />
-      ))}
-    </div>
+    <section className="text-xl font-semibold text-gray-900 dark:text-green-200 my-4">
+      YouTube Playlists
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+        {playlists.map((plist, index) => (
+          <YoutubeCard key={index} data={plist.snippet} thumbnail={thumbnail} />
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default YoutubeSubs;
+export default YoutubeLists;
